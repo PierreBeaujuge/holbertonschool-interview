@@ -20,5 +20,5 @@ def minOperations(n):
     for i in range(2, int(n) + 1):
         while (n % i) == 0:
             num_op += [i]
-            n = n / i
+            n = int(n / i)
     return sum(num_op)
