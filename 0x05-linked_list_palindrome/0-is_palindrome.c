@@ -13,17 +13,17 @@ int is_palindrome(listint_t **head)
 	int *array = NULL;
 
 	if (!head)
-		return (0);
+		return (1);
 	if (!(*head))
 		return (1);
 	current = *head;
-	while (!current)
+	while (current)
 		len++, current = current->next;
 	current = *head;
 	array = malloc(sizeof(int) * len);
 	if (!array)
 		return (0);
-	while (!current)
+	while (current)
 	{
 		array[i] = current->n;
 		current = current->next;
