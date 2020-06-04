@@ -34,8 +34,6 @@ if __name__ == '__main__':
                     status_codes[status_code] += 1
             except:
                 pass
-            # list_of_tuples = sorted([(k, v) for k, v in
-            #                          status_codes.items() if v != 0])
             if line_count % 10 == 0:
                 metrics(file_size, status_codes)
         metrics(file_size, status_codes)
