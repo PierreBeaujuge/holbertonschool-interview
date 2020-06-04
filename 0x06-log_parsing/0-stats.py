@@ -24,7 +24,9 @@ if __name__ == '__main__':
             except:
                 pass
             try:
-                status_codes[parse[-2]] += 1
+                status_code = parse[-2]
+                if status_code in status_codes.keys():
+                    status_codes[parse[-2]] += 1
             except:
                 pass
             list_of_tuples = sorted([(k, v) for k, v in
