@@ -15,8 +15,11 @@ if __name__ == '__main__':
     file_size = []
     status_codes = {'200': 0, '301': 0, '400': 0, '401': 0, '403': 0,
                     '404': 0, '405': 0, '500': 0}
+    line_count = 0
+
     try:
         for line in sys.stdin:
+            line_count += 1
             parse = line.split()
             # print(parse)
             try:
@@ -26,12 +29,12 @@ if __name__ == '__main__':
             try:
                 status_code = parse[-2]
                 if status_code in status_codes.keys():
-                    status_codes[parse[-2]] += 1
+                    status_codes[status_code] += 1
             except:
                 pass
             list_of_tuples = sorted([(k, v) for k, v in
                                      status_codes.items() if v != 0])
-            if len(file_size) % 10 == 0:
+            if line_count % 10 == 0:
                 metrics(file_size, list_of_tuples)
         metrics(file_size, list_of_tuples)
     except KeyboardInterrupt:
