@@ -6,8 +6,10 @@ if __name__ == '__main__':
 
     import sys
 
-    def metrics(file_size, list_of_tuples):
+    def metrics(file_size, status_codes):
         """function that computes metrics"""
+        list_of_tuples = sorted([(k, v) for k, v in
+                                 status_codes.items() if v != 0])
         print("File size: {}".format(sum(file_size)))
         for kv in list_of_tuples:
             print("{}: {}".format(kv[0], kv[1]))
@@ -32,11 +34,11 @@ if __name__ == '__main__':
                     status_codes[status_code] += 1
             except:
                 pass
-            list_of_tuples = sorted([(k, v) for k, v in
-                                     status_codes.items() if v != 0])
+            # list_of_tuples = sorted([(k, v) for k, v in
+            #                          status_codes.items() if v != 0])
             if line_count % 10 == 0:
-                metrics(file_size, list_of_tuples)
-        metrics(file_size, list_of_tuples)
+                metrics(file_size, status_codes)
+        metrics(file_size, status_codes)
     except KeyboardInterrupt:
-        metrics(file_size, list_of_tuples)
+        metrics(file_size, status_codes)
         raise
