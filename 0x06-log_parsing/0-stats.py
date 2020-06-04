@@ -19,8 +19,14 @@ if __name__ == '__main__':
         for line in sys.stdin:
             parse = line.split()
             # print(parse)
-            file_size += [int(parse[-1])]
-            status_codes[parse[-2]] += 1
+            try:
+                file_size += [int(parse[-1])]
+            except:
+                pass
+            try:
+                status_codes[parse[-2]] += 1
+            except:
+                pass
             list_of_tuples = sorted([(k, v) for k, v in
                                      status_codes.items() if v != 0])
             if len(file_size) % 10 == 0:
