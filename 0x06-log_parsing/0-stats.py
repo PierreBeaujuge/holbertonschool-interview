@@ -25,6 +25,7 @@ if __name__ == '__main__':
                                      status_codes.items() if v != 0])
             if len(file_size) % 10 == 0:
                 metrics(file_size, list_of_tuples)
+        metrics(file_size, list_of_tuples)
     except KeyboardInterrupt:
         metrics(file_size, list_of_tuples)
         raise
