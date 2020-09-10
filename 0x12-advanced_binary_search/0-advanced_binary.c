@@ -39,7 +39,7 @@ int binary_search_recurse(int *array, int start, int end, int value)
 	printf("Searching in array: ");
 	for (i = start; i <= end; i++)
 	{
-		printf("%i", array[i]);
+		printf("%d", array[i]);
 		if (i != end)
 			printf(", ");
 		else
@@ -53,8 +53,8 @@ int binary_search_recurse(int *array, int start, int end, int value)
 						      value));
 		return (mid);
 	}
-	else if (value < array[mid])
-		return (binary_search_recurse(array, start, mid - 1, value));
+	else if (value <= array[mid])
+		return (binary_search_recurse(array, start, mid, value));
 	else
 		return (binary_search_recurse(array, mid + 1, end, value));
 	return (-1);
