@@ -50,7 +50,7 @@ def count_words(subreddit, word_list):
     # Make a call to recurse() to fetch all the titles
     hot_list = recurse(subreddit)
     # print(hot_list)
-    if not hot_list:
+    if hot_list is None:
         return None
 
     # Initialize a dictionary of counters with the words of word_list as keys
