@@ -51,7 +51,7 @@ def count_words(subreddit, word_list):
     hot_list = recurse(subreddit)
     # print(hot_list)
     if not hot_list:
-        return
+        return None
 
     # Initialize a dictionary of counters with the words of word_list as keys
     counts = {word: 0 for word in word_list}
