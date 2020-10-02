@@ -20,6 +20,7 @@ This repository contains programs and algorithms aimed at practicing higher-leve
 | [0x0A. 2048 (single line)](./0x0A-slide_line)                             | C - operations, math                   |
 | [0x0B. Menger](./0x0B-menger)                                             | C - matrixes and math                  |
 | [0x0C. Nqueens](./0x0C-nqueens)                                           | Python - backtracking                  |
+| [0x0D. Array to AVL](./0x0D-sorted_array_to_avl)                          | C - binary trees                       |
 | [0x0E. Linear Skip](./0x0E-linear_skip)                                   | C - searching                          |
 | [0x0F. Starwars Api](./0x0F-starwars_api)                                 | Python - apis                          |
 | [0x10. Train](./0x10-rain)                                                | Python - two pointers                  |
